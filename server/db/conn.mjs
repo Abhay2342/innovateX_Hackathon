@@ -8,6 +8,6 @@ try {
 } catch (e) {
     console.error(e);
 }
-let db = conn.db("get-my-news");
+let db = conn.db("CareerCompass");
 
 export default db;

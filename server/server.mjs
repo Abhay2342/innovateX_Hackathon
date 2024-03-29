@@ -3,7 +3,8 @@ import "./loadEnvironment.mjs";
 import cors from 'cors';
 import login from './controllers/login.mjs';
 import signup from "./controllers/signup.mjs";
-
+import db from "./db/conn.mjs";
+import { User, Job, Application, Message, MessageThread, Notification } from "./db/schema.mjs";
 const app = express();
 const port = process.env.PORT || 3000;
 
