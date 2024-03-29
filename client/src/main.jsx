@@ -11,7 +11,14 @@ reactRoot.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <App />
+      <div
+        style={{
+          backgroundImage: "linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%)",
+          minHeight: "100vh", // Ensure the background covers the whole viewport height
+        }}
+      >
+        <App />
+      </div>
     </ThemeProvider>
   </React.StrictMode>
 );
