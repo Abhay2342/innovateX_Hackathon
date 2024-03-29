@@ -124,7 +124,16 @@ const theme = createTheme({
         lineHeight: "120%",
         textAlign: "start",
       },
+      
     },
+    tagLine: {
+        fontFamily: "Roboto",
+        fontWeight: 700,
+        fontSize: "24px",
+        lineHeight: "120%",
+        textAlign: "start",
+        color: "#003396",
+      },
 
     title: {
       fontFamily: "Inika",
