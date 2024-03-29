@@ -1,8 +1,15 @@
 import React from "react";
 import { AppBar, Toolbar, Grid, Button } from "@mui/material";
 import logo_header from "../../assets/career_compass.png";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate("/signup");
+  };
+
   return (
     <AppBar
       position="static"

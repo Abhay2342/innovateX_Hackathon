@@ -4,18 +4,20 @@ import Header from "../../components/Header/Header";
 import HeroSection from "../../components/HeroSection/HeroSection";
 const HomePage = () => {
   const navigate = useNavigate();
-  //   const [isLoggedIn, setIsLoggedIn] = useState(
-  //     localStorage.getItem("isLoggedIn")
-  //   );
 
-  //   const handleSignOut = () => {
-  //     setIsLoggedIn(false);
-  //     localStorage.removeItem("user");
-  //   };
+  const handleLoginSubmit = () => {
+    navigate("/login");
+  };
+  const handleSignUpSubmit = () => {
+    navigate("/signup");
+  };
 
   return (
     <div>
-      <HeroSection />
+      <HeroSection
+        handleLoginSubmit={handleLoginSubmit}
+        handleSignUpSubmit={handleSignUpSubmit}
+      />
     </div>
   );
 };

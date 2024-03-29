@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
-
+import { useNavigate } from "react-router-dom";
 import "./HeroSection.css";
 
-const HeroSection = ({}) => {
+const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit }) => {
   return (
     <Box
       sx={{
@@ -41,16 +41,16 @@ const HeroSection = ({}) => {
           md={12}
           spacing={3}
           container
-          justifyContent="center" 
+          justifyContent="center"
           marginY={"-20px"} // Adjusted negative margin
         >
           <Grid item>
-            <Button variant="header" size="large">
+            <Button variant="header" size="large" onClick={handleLoginSubmit}>
               Login
             </Button>
           </Grid>
           <Grid item>
-            <Button variant="header" size="large">
+            <Button variant="header" size="large" onClick={handleSignUpSubmit}>
               SIGN UP
             </Button>
           </Grid>
