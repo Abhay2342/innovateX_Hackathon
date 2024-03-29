@@ -13,7 +13,7 @@ reactRoot.render(
       <CssBaseline />
       <div
         style={{
-          backgroundImage: "linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%)",
+          backgroundImage: "linear-gradient(45deg, #84AEFF 30%, #CCDDFF 90%, #FFFFFF 30%)",
           minHeight: "100vh", // Ensure the background covers the whole viewport height
         }}
       >
