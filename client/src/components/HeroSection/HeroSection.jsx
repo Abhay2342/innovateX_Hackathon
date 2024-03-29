@@ -33,7 +33,7 @@ const HeroSection = ({
             <Typography variant="bannerH1" align="center">
               CareerCompass
             </Typography>
-            <Typography variant="tagLine" align="center" marginTop={"-20px"}>
+            <Typography variant="tagLine" align="center">
               “Connecting Talent With Opportunity”
             </Typography>
           </div>
@@ -47,7 +47,7 @@ const HeroSection = ({
           spacing={3}
           container
           justifyContent="center"
-          marginY={"-20px"} // Adjusted negative margin
+          // Adjusted negative margin
         >
           <Grid container justifyContent="center" alignItems="center">
             <Grid item md={7}>
