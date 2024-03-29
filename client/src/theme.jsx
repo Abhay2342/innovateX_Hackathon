@@ -11,7 +11,27 @@ const theme = createTheme({
       styleOverrides: {
         header: {
           padding: "12px 24px",
-          height: "48px",
+          color: "#2c2f32",
+          textTransform: "uppercase",
+          border: "2px solid #0b86ff",
+          display: "block",
+          borderRadius: "10px",
+          backgroundColor: "transparent",
+          fontWeight: 600,
+          fontSize: "16px",
+          lineHeight: "150%",
+          transition: "color .3s, background-color .3s",
+          justifyContent: "center",
+          textAlign: "center",
+          paddingLeft: "13px",
+          paddingRight: "13px",
+          minWidth: "165px",
+        },
+
+        listingSearch: {
+          padding: "12px 24px",
+          paddingTop: "16px",
+          paddingBottom: "16px",
           color: "#2c2f32",
           textTransform: "uppercase",
           border: "2px solid #0b86ff",
@@ -124,16 +144,15 @@ const theme = createTheme({
         lineHeight: "120%",
         textAlign: "start",
       },
-      
     },
     tagLine: {
-        fontFamily: "Roboto",
-        fontWeight: 700,
-        fontSize: "24px",
-        lineHeight: "120%",
-        textAlign: "start",
-        color: "#003396",
-      },
+      fontFamily: "Roboto",
+      fontWeight: 700,
+      fontSize: "24px",
+      lineHeight: "120%",
+      textAlign: "start",
+      color: "#003396",
+    },
 
     title: {
       fontFamily: "Inika",

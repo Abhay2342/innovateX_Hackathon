@@ -1,9 +1,13 @@
 import React from "react";
-import { Box, Grid, Typography, Button,TextField } from "@mui/material";
+import { Box, Grid, Typography, Button, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./HeroSection.css";
 
-const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit,handleSearchSubmit }) => {
+const HeroSection = ({
+  handleLoginSubmit,
+  handleSignUpSubmit,
+  handleSearchSubmit,
+}) => {
   return (
     <Box
       sx={{
@@ -45,13 +49,12 @@ const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit,handleSearchSubmit 
           justifyContent="center"
           marginY={"-20px"} // Adjusted negative margin
         >
-          <Grid container
-          justifyContent="center">
-            <Grid item md={7}> 
-            <TextField
+          <Grid container justifyContent="center" alignItems="center">
+            <Grid item md={7}>
+              <TextField
                 sx={{
                   background: "#CCDDFF",
-                  margin: "1px 15px",
+                  margin: "1px 0px",
                   border: 1.5,
                   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
                 }}
@@ -63,24 +66,30 @@ const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit,handleSearchSubmit 
                 required
               />
             </Grid>
-          <Grid item
-        md = {3}
-        spacing={15}
-        container
-        justifyContent="center"
-        marginY={"5px"}
-        >
-        <Button variant="header" size="large" sx={{
+            <Grid
+              item
+              md={"auto"}
+              container
+              justifyContent="center"
+              marginY={"5px"}
+            >
+              <Button
+                variant="listingSearch"
+                size="large"
+                sx={{
                   background: "#CCDDFF",
-                  margin: "1px 15px",
+                  margin: "1px 0px",
                   border: 1.5,
-                  borderRadius:1,
-                  boxShadow: "px 3px 0px rgba(0, 0, 0, 0.25)",
-                }} onClick={handleSearchSubmit}>
-            Search
-          </Button>
 
-        </Grid>
+                  borderRadius: "0px",
+
+                  boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
+                }}
+                onClick={handleSearchSubmit}
+              >
+                Search
+              </Button>
+            </Grid>
           </Grid>
           <Grid item>
             <Button variant="header" size="large" onClick={handleLoginSubmit}>
