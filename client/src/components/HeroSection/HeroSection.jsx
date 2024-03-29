@@ -23,13 +23,14 @@ const HeroSection = ({}) => {
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
+              margin: "50px auto", // Center horizontally and reduce top margin
             }}
           >
             <Typography variant="bannerH1" align="center">
               CareerCompass
             </Typography>
-            <Typography variant="tagLine" align="center">
-              "Connect Talent With Opportunity"
+            <Typography variant="tagLine" align="center" marginTop={"-20px"}>
+              “Connecting Talent With Opportunity”
             </Typography>
           </div>
         </Grid>
@@ -40,7 +41,8 @@ const HeroSection = ({}) => {
           md={12}
           spacing={3}
           container
-          justifyContent="center"
+          justifyContent="center" 
+          marginY={"-20px"} // Adjusted negative margin
         >
           <Grid item>
             <Button variant="header" size="large">
