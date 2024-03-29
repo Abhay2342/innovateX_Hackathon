@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, Grid, Typography, Button } from "@mui/material";
+import { Box, Grid, Typography, Button,TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./HeroSection.css";
 
-const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit }) => {
+const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit,handleSearchSubmit }) => {
   return (
     <Box
       sx={{
@@ -34,6 +34,7 @@ const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit }) => {
             </Typography>
           </div>
         </Grid>
+
         <Grid
           item
           xs={12}
@@ -44,6 +45,43 @@ const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit }) => {
           justifyContent="center"
           marginY={"-20px"} // Adjusted negative margin
         >
+          <Grid container
+          justifyContent="center">
+            <Grid item md={7}> 
+            <TextField
+                sx={{
+                  background: "#CCDDFF",
+                  margin: "1px 15px",
+                  border: 1.5,
+                  boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
+                }}
+                label="Search Jobs"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                type="Type to search"
+                required
+              />
+            </Grid>
+          <Grid item
+        md = {3}
+        spacing={15}
+        container
+        justifyContent="center"
+        marginY={"5px"}
+        >
+        <Button variant="header" size="large" sx={{
+                  background: "#CCDDFF",
+                  margin: "1px 15px",
+                  border: 1.5,
+                  borderRadius:1,
+                  boxShadow: "px 3px 0px rgba(0, 0, 0, 0.25)",
+                }} onClick={handleSearchSubmit}>
+            Search
+          </Button>
+
+        </Grid>
+          </Grid>
           <Grid item>
             <Button variant="header" size="large" onClick={handleLoginSubmit}>
               Login
