@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useContext } from "react";
+import img from "../../assets/preview.png"
+
 import {
   Container,
   Grid,
@@ -103,6 +105,7 @@ const LoginPage = () => {
             alt="Login Page Image"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
+      
         </Grid>
         {/* Right Side with Login Form */}
         <Divider
