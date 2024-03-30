@@ -43,6 +43,31 @@ const Header = () => {
               </Button>
             </Grid>
           </Grid>
+
+          {/* Buttons Column */}
+          {/* <Grid
+            item
+            xs={6}
+            sm={6}
+            md={4}
+            spacing={3}
+            container
+            justifyContent="flex-end"
+          >
+            <Grid item>
+              <Button variant="header" size="large">
+                Student Login
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button variant="header" size="large">
+                Buy Package
+              </Button>
+            </Grid>
+          </Grid> */}
+          <Grid item xs={12} md={12}>
+            <Divider sx={{ borderTopWidth: 2 }} variant="middle" flexItem />
+          </Grid>
         </Grid>
       </Toolbar>
     </AppBar>

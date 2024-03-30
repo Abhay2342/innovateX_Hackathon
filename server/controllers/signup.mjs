@@ -37,8 +37,11 @@ const signup = async (req, res) => {
             
         });
 
-
-        res.status(201).send("User created");
+        res.status(201).send({
+            "username": username,
+            "email": email,
+            "role": role
+        });
     } catch (error) {
         console.error("Error during signup:", error);
         res.status(500).send("Internal Server Error");
