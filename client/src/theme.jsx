@@ -17,7 +17,6 @@ const theme = createTheme({
           display: "block",
           fontWeight: 700,
           transition: "color .3s, background-color .3s",
-
           minWidth: "165px",
         },
 
@@ -30,6 +29,7 @@ const theme = createTheme({
           lineHeight: "150%",
           textAlign: "center",
           minWidth: "165px",
+          transition: "white .3s, black .3s",
         },
 
         menu_header: {
@@ -39,6 +39,11 @@ const theme = createTheme({
           paddingBottom: "26px",
           display: "block",
           cursor: "pointer",
+          "&:hover": { // Define hover effect
+                  backgroundColor: "none",
+                  color: "white",
+                  transition: "background-color 0.3s ease, color 0.3s ease",
+                },
         },
 
         contained: {
