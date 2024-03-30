@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useContext } from "react";
-import img from "../../assets/preview.png";
+import JobListingCard from "../../components/JobListingCard";
 
 import {
   Container,
@@ -100,20 +100,30 @@ const JobsPage = () => {
       <Grid item xs={3}></Grid>
       <Divider
         orientation="vertical"
-        sx={{ marginX: "50px", borderRightWidth: 2 }}
+        sx={{ marginX: "30px", borderRightWidth: 2 }}
         variant="middle"
         flexItem
       />
 
-      <Grid
-        item
-        container
-        xs={9}
-        sx={{ justifyContent: "center" }}
-        justifyContent="center"
-      >
-        <Grid item xs={6}></Grid>
-        <Grid item xs={6}></Grid>
+      <Grid item container xs={7} spacing={2} alignSelf={"flex-start"}>
+        <Grid item xs={6}>
+          <JobListingCard
+            jobTitle="Frontend Developer"
+            company="ABC Company"
+            location="New York, NY"
+            description="We are seeking a talented Frontend Developer to join our team. If you have experience with ReactJS and a passion for creating beautiful user interfaces, apply now!"
+            applyLink="https://example.com/apply"
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <JobListingCard
+            jobTitle="Frontend Developer"
+            company="ABC Company"
+            location="New York, NY"
+            description="We are seeking a talented Frontend Developer to join our team. If you have experience with ReactJS and a passion for creating beautiful user interfaces, apply now!"
+            applyLink="https://example.com/apply"
+          />
+        </Grid>
       </Grid>
     </Grid>
   );
