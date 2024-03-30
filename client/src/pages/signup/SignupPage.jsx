@@ -33,44 +33,44 @@ const SignUpPage = () => {
   const handleSignUpSubmit = async (event) => {
     event.preventDefault();
 
-    // const formData = new FormData(event.target);
-    // const formObject = {};
-    // formData.forEach((value, key) => {
-    //   formObject[key] = value;
-    // });
+    const formData = new FormData(event.target);
+    const formObject = {};
+    formData.forEach((value, key) => {
+      formObject[key] = value;
+    });
 
-    // try {
-    //   setLoading(true);
-    //   const response = await fetch(
-    //     "https://get-my-news-server.onrender.com/signup",
-    //     // "http://localhost:3000/signup",
-    //     {
-    //       method: "PUT",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify(formObject),
-    //     }
-    //   );
+    try {
+      setLoading(true);
+      const response = await fetch(
+        // "https://innovate-x-hackathon.vercel.app/signup",
+        "http://localhost:3000/signup",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formObject),
+        }
+      );
 
-    //   console.log("Sign Up response:", response);
+      console.log("Sign Up response:", response);
 
-    //   if (response.ok) {
-    //     // Handle successful sign-up, e.g., redirect to a confirmation page
-    //     console.log("User Created");
-    //     setLoading(false);
-    //     navigate("/login");
-    //   } else {
-    //     // Handle unsuccessful sign-up, show an error message, etc.
-    //     console.error("Sign Up failed");
-    //     let data = await response.text();
-    //     console.log(data);
-    //     setLoading(false);
-    //   }
-    // } catch (error) {
-    //   console.error("Error during Sign Up:", error);
-    //   setLoading(false);
-    // }
+      if (response.ok) {
+        // Handle successful sign-up, e.g., redirect to a confirmation page
+        console.log("User Created");
+        setLoading(false);
+        navigate("/login");
+      } else {
+        // Handle unsuccessful sign-up, show an error message, etc.
+        console.error("Sign Up failed");
+        let data = await response.text();
+        console.log(data);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error("Error during Sign Up:", error);
+      setLoading(false);
+    }
   };
 
   return (
@@ -142,10 +142,11 @@ const SignUpPage = () => {
                   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
                   border: 1,
                 }}
-                labelId="user_type"
-                id="user_type"
+                labelId="role"
+                id="role"
                 value={"Choose Your Account Type"}
-                label="user_type"
+                label="role"
+                name="role"
               >
                 <MenuItem value={"Choose Your Account Type"}>
                   Choose Your Account Type
@@ -176,7 +177,7 @@ const SignUpPage = () => {
                   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
                   border: 1,
                 }}
-                name="uname"
+                name="username"
                 label="USERNAME"
                 variant="outlined"
                 fullWidth

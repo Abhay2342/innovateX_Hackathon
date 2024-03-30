@@ -45,48 +45,48 @@ const LoginPage = () => {
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
 
-    // try {
-    //   setLoading(true);
+    try {
+      setLoading(true);
 
-    //   const response = await fetch(
-    //     "https://get-my-news-server.onrender.com/login",
-    //     // "http://localhost:3000/login",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         email,
-    //         password,
-    //       }),
-    //     }
-    //   );
+      const response = await fetch(
+        // "https://innovate-x-hackathon.vercel.app/login",
+        "http://localhost:3000/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+        }
+      );
 
-    //   if (response.ok) {
-    //     const userData = await response.json();
+      if (response.ok) {
+        const userData = await response.json();
+        console.log("Logged IN");
+        // Update user context with email and other user data
+        // loginUser(userData);
+        // console.log(userData[0]);
+        // console.log(JSON.stringify(userData));
+        // localStorage.setItem("user", JSON.stringify(userData[0]));
+        // localStorage.setItem(
+        //   "userCollection",
+        //   JSON.stringify(userData[1].collection)
+        // );
+        // localStorage.setItem("isLoggedIn", "true");
 
-    //     // Update user context with email and other user data
-    //     // loginUser(userData);
-    //     // console.log(userData[0]);
-    //     // console.log(JSON.stringify(userData));
-    //     localStorage.setItem("user", JSON.stringify(userData[0]));
-    //     localStorage.setItem(
-    //       "userCollection",
-    //       JSON.stringify(userData[1].collection)
-    //     );
-    //     localStorage.setItem("isLoggedIn", "true");
-
-    //     setLoading(false);
-    //     navigate("/profile-settings");
-    //   } else {
-    //     console.error("Login failed");
-    //     setLoading(false);
-    //   }
-    // } catch (error) {
-    //   console.error("Error during login:", error);
-    //   setLoading(false);
-    // }
+        // setLoading(false);
+        // navigate("/profile-settings");
+      } else {
+        console.error("Login failed");
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      setLoading(false);
+    }
   };
 
   return (
