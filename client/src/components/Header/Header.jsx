@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Grid, Button } from "@mui/material";
+import { AppBar, Toolbar, Grid, Button,Divider } from "@mui/material";
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
       }}
     >
       <Toolbar disableGutters>
-        <Grid container spacing={3} alignItems="center">
+        <Grid container spacing={3} alignItems="center" paddingTop={"0px"} >
           {/* Logo Column */}
           {/* <Grid item xs={3} sm={2} md={2}>
             <img
@@ -53,6 +53,7 @@ const Header = () => {
               </Button>
             </Grid>
           </Grid>
+
           {/* Buttons Column */}
           {/* <Grid
             item
@@ -74,7 +75,16 @@ const Header = () => {
               </Button>
             </Grid>
           </Grid> */}
+          <Grid item xs={12} md={12} >
+          <Divider
+          sx={{ borderTopWidth:2 }}
+          variant="middle"
+          flexItem
+        />
+          </Grid>
         </Grid>
+        
+
         
       </Toolbar>
     </AppBar>
