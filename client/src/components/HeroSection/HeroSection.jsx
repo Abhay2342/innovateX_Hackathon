@@ -66,17 +66,6 @@ const HeroSection = ({
                 required
               />
             </Grid>
-<<<<<<< HEAD
-          <Grid item
-        md = {3}
-        spacing={15}
-        container
-        justifyContent="center"
-        marginY={"5px"}
-        >
-        <Button variant="header" size="large" sx={{
-                  background: "#CCDDFF",
-=======
             <Grid
               item
               md={"auto"}
@@ -90,7 +79,6 @@ const HeroSection = ({
                 sx={{
                   background: "#003396",
                   color: "white",
->>>>>>> 2e5fd30f65a31133b131600bbed9fc7033222d47
                   margin: "1px 0px",
                   border: 1.5,
                   borderColor: "#003396",
