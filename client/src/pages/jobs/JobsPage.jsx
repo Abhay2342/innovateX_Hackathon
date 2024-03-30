@@ -97,15 +97,7 @@ const JobsPage = () => {
       alignItems="center"
       style={{ height: "80vh" }}
     >
-      {/* Left Side with Image */}
-      <Grid item xs={3}>
-        <img
-          src={img} // replace with the path to your image
-          alt="Login Page Image"
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
-      </Grid>
-      {/* Right Side with Login Form */}
+      <Grid item xs={3}></Grid>
       <Divider
         orientation="vertical"
         sx={{ marginX: "50px", borderRightWidth: 2 }}
@@ -115,10 +107,14 @@ const JobsPage = () => {
 
       <Grid
         item
+        container
         xs={9}
         sx={{ justifyContent: "center" }}
         justifyContent="center"
-      ></Grid>
+      >
+        <Grid item xs={6}></Grid>
+        <Grid item xs={6}></Grid>
+      </Grid>
     </Grid>
   );
 };
