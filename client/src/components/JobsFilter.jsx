@@ -1,7 +1,12 @@
 import React from "react";
 import { TextField, Button, Grid, Typography } from "@mui/material";
 
-const FilterSidebar = ({ filters, setFilters, handleFilterSubmit }) => {
+const FilterSidebar = ({
+  filters,
+  setFilters,
+  handleFilterSubmit,
+  setData,
+}) => {
   const handleInputChange = (event, filterKey) => {
     const updatedFilters = { ...filters, [filterKey]: event.target.value };
     setFilters(updatedFilters);
@@ -35,7 +40,7 @@ const FilterSidebar = ({ filters, setFilters, handleFilterSubmit }) => {
 
         newData = JSON.stringify(newData);
         console.log(newData);
-        localStorage.setItem("user", newData);
+        setData(newData);
 
         console.log("Details Updated");
       } else {

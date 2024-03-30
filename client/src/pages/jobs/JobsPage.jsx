@@ -60,6 +60,7 @@ const JobsPage = () => {
         <FilterSidebar
           filters={filters}
           setFilters={setFilters}
+          setData={setData}
           handleFilterSubmit={handleFilterSubmit}
         />
       </Grid>
