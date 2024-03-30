@@ -59,6 +59,7 @@ const HeroSection = ({
                   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
                 }}
                 label="Search Jobs"
+                InputLabelProps={{  style: { fontSize: '30px', position: 'absolute', top: '-8px' } }}
                 variant="outlined"
                 fullWidth
                 margin="normal"
@@ -83,6 +84,11 @@ const HeroSection = ({
                   border: 1.5,
                   borderColor: "#003396",
                   borderRadius: "0px",
+                  "&:hover": { // Define hover effect
+                  backgroundColor: "white",
+                  color: "#003396",
+                  transition: "background-color 0.3s ease, color 0.3s ease",
+                },
 
                   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
                 }}
@@ -93,7 +99,13 @@ const HeroSection = ({
             </Grid>
           </Grid>
           <Grid item>
-            <Button variant="header" size="large" onClick={handleLoginSubmit}>
+            <Button variant="header" size="large" sx={{
+              "&:hover": { // Define hover effect
+                  backgroundColor: "white",
+                  color: "#003396",
+                  transition: "background-color 0.3s ease, color 0.3s ease",
+                },
+            }} onClick={handleLoginSubmit}>
               Login
             </Button>
           </Grid>
@@ -101,7 +113,14 @@ const HeroSection = ({
             <Button
               variant="header"
               size="large"
-              sx={{ backgroundColor: "white", border: 0, color: "black" }}
+              sx={{
+                backgroundColor: "white", border: 0, color: "#003396",
+                "&:hover": { // Define hover effect
+                  backgroundColor: "#003396",
+                  color: "white",
+                  transition: "background-color 0.3s ease, color 0.3s ease",
+                },
+              }}
               onClick={handleSignUpSubmit}
             >
               SIGN UP
