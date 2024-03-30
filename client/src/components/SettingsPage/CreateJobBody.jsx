@@ -25,8 +25,8 @@ const CreateJobBody = ({}) => {
     });
     console.log(formData);
     try {
-      const response = await fetch(`http://localhost:3000/login/add-jobs`, {
-        method: "PATCH",
+      const response = await fetch(`http://localhost:3000/add-jobs`, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
