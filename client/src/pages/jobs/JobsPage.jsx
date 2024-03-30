@@ -94,7 +94,7 @@ const JobsPage = () => {
       alignItems="center"
       style={{ height: "80vh" }}
     >
-      <Grid item xs={3}>
+      <Grid item xs={3} alignSelf={"flex-start"}>
         {" "}
         <FilterSidebar
           filters={filters}
@@ -104,12 +104,20 @@ const JobsPage = () => {
       </Grid>
       <Divider
         orientation="vertical"
-        sx={{ marginX: "30px", borderRightWidth: 2 }}
+        sx={{ marginLeft: "30px", borderRightWidth: 2 }}
         variant="middle"
         flexItem
       />
 
-      <Grid item container xs={7} spacing={2} alignSelf={"flex-start"}>
+      <Grid
+        item
+        container
+        xs={7}
+        spacing={2}
+        height={"80vh"}
+        alignSelf={"flex-start"}
+        sx={{ overflowY: "auto", paddingX: "30px" }}
+      >
         <Grid item xs={6}>
           <JobListingCard
             jobTitle="Frontend Developer"
