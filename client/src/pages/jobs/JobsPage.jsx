@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useContext } from "react";
-import img from "../../assets/preview.png";
+import JobListingCard from "../../components/JobListingCard";
 
 import {
   Container,
@@ -16,6 +16,7 @@ import {
 import GoogleIcon from "../../assets/google.svg";
 import TwitterIcon from "../../assets/twitter.svg";
 import LinkedInIcon from "../../assets/linkedin.svg";
+import FilterSidebar from "../../components/JobsFilter";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 // import { useUser } from "../../components/UserContext";
 const JobsPage = () => {
@@ -26,21 +27,17 @@ const JobsPage = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false); // State to manage loading spinner
 
-  // Handler for login button click
-  const handleSignUpClick = () => {
-    navigate("/signup");
-  };
+  const [filters, setFilters] = useState({
+    company: "",
+    location: "",
+    skills: "",
+    position: "",
+  });
 
-  const handleLogoClick = () => {
-    navigate("/");
-  };
-
-  const handleUsernameChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
+  // Handler for applying filters
+  const handleFilterSubmit = () => {
+    // Implement filter logic here to filter job listings based on filter values
+    console.log("Applying filters:", filters);
   };
 
   const handleLoginSubmit = async (event) => {
@@ -97,18 +94,17 @@ const JobsPage = () => {
       alignItems="center"
       style={{ height: "80vh" }}
     >
-      {/* Left Side with Image */}
-      <Grid item xs={3}>
-        <img
-          src={img} // replace with the path to your image
-          alt="Login Page Image"
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+      <Grid item xs={3} alignSelf={"flex-start"} sx={{ marginX: "30px" }}>
+        {" "}
+        <FilterSidebar
+          filters={filters}
+          setFilters={setFilters}
+          handleFilterSubmit={handleFilterSubmit}
         />
       </Grid>
-      {/* Right Side with Login Form */}
       <Divider
         orientation="vertical"
-        sx={{ marginX: "50px", borderRightWidth: 2 }}
+        sx={{ borderRightWidth: 2 }}
         variant="middle"
         flexItem
       />
