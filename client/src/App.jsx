@@ -28,7 +28,6 @@ function App() {
     </Router>
   );
 }
-import EmployerDashboard from "./pages/settings/SettingsPage";
 import SettingsPage from "./pages/settings/SettingsPage";
 
 export default App;

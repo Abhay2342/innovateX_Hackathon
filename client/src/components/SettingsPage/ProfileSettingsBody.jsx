@@ -18,39 +18,39 @@ const ProfileSettingsBody = ({}) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const formObject = {};
-    formData.forEach((value, key) => {
-      formObject[key] = value;
-    });
-    console.log(formData);
-    try {
-      const response = await fetch(
-        "https://get-my-news-server.onrender.com/user/update/:uname",
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formObject),
-        }
-      );
+    // const formData = new FormData(event.target);
+    // const formObject = {};
+    // formData.forEach((value, key) => {
+    //   formObject[key] = value;
+    // });
+    // console.log(formData);
+    // try {
+    //   const response = await fetch(
+    //     "http://localhost:3000/uname",
+    //     {
+    //       method: "PUT",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify(formObject),
+    //     }
+    //   );
 
-      console.log("Support response:", response);
+    //   console.log("Support response:", response);
 
-      if (response.ok) {
-        // Handle successful sign-up, e.g., redirect to a confirmation page
-        console.log("Ticket Created");
-        // navigate("/login");
-      } else {
-        // Handle unsuccessful sign-up, show an error message, etc.
-        console.error("Ticket Creation failed");
-        let data = await response.text();
-        console.log(data);
-      }
-    } catch (error) {
-      console.error("Error during Ticket Creation:", error);
-    }
+    //   if (response.ok) {
+    //     // Handle successful sign-up, e.g., redirect to a confirmation page
+    //     console.log("Ticket Created");
+    //     // navigate("/login");
+    //   } else {
+    //     // Handle unsuccessful sign-up, show an error message, etc.
+    //     console.error("Ticket Creation failed");
+    //     let data = await response.text();
+    //     console.log(data);
+    //   }
+    // } catch (error) {
+    //   console.error("Error during Ticket Creation:", error);
+    // }
   };
 
   return (
