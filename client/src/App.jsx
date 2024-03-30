@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import LoginPage from "./pages/login/LoginPage";
 import SignUpPage from "./pages/signup/SignupPage";
+import JobsPage from "./pages/jobs/JobsPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/jobs" element={<JobsPage />} />
       </Routes>
     </Router>
   );

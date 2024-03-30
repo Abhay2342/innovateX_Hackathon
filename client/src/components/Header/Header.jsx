@@ -1,7 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, Grid, Button } from "@mui/material";
 
-
 const Header = () => {
   return (
     <AppBar
@@ -39,7 +38,7 @@ const Header = () => {
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="menu_header" color="inherit">
+              <Button href="/jobs" variant="menu_header" color="inherit">
                 JOBS
               </Button>
             </Grid>
