@@ -13,16 +13,6 @@ const Header = () => {
     >
       <Toolbar disableGutters>
         <Grid container spacing={3} alignItems="center">
-          {/* Logo Column */}
-          {/* <Grid item xs={3} sm={2} md={2}>
-            <img
-              src={logo_header}
-              alt="Logo"
-              height={"100px"}
-              width={"280px"}
-            />
-          </Grid> */}
-          {/* Navigation Links Column */}
           <Grid
             item
             xs={12}
@@ -53,29 +43,7 @@ const Header = () => {
               </Button>
             </Grid>
           </Grid>
-          {/* Buttons Column */}
-          {/* <Grid
-            item
-            xs={6}
-            sm={6}
-            md={4}
-            spacing={3}
-            container
-            justifyContent="flex-end"
-          >
-            <Grid item>
-              <Button variant="header" size="large">
-                Student Login
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button variant="header" size="large">
-                Buy Package
-              </Button>
-            </Grid>
-          </Grid> */}
         </Grid>
-        
       </Toolbar>
     </AppBar>
   );

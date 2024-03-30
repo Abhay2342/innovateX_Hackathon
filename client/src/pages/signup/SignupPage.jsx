@@ -8,8 +8,8 @@ import {
   Typography,
   Divider,
   Link,
-  MenuItem,
   Select,
+  MenuItem,
   InputLabel,
 } from "@mui/material";
 import GoogleIcon from "../../assets/google.svg";
@@ -21,6 +21,11 @@ import { CircularProgress } from "@mui/material";
 import img from "../../assets/signupimg.png";
 const SignUpPage = () => {
   const navigate = useNavigate(); // Initialize useNavigate
+  const [selectValue, setSelect] = React.useState("Choose Your Account Type");
+
+  const handleChange = (event) => {
+    setSelect(event.target.value);
+  };
 
   const [loading, setLoading] = useState(false);
   const handleLoginClick = () => {
@@ -138,6 +143,7 @@ const SignUpPage = () => {
               <Select
                 fullWidth
                 sx={{
+                  borderRadius: 0,
                   background: "#FFFFFF",
                   margin: "5px 0px",
                   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
@@ -145,9 +151,10 @@ const SignUpPage = () => {
                 }}
                 labelId="role"
                 id="role"
-                value={"Choose Your Account Type"}
+                value={selectValue}
                 label="role"
                 name="role"
+                onChange={handleChange}
               >
                 <MenuItem value={"Choose Your Account Type"}>
                   Choose Your Account Type
