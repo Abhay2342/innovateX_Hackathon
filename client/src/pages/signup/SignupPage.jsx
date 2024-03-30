@@ -49,7 +49,7 @@ const SignUpPage = () => {
       setLoading(true);
       const response = await fetch(
         // "https://innovate-x-hackathon.vercel.app/signup",
-        "http://localhost:3000/signup",
+        "https://innovatex-hackathon.onrender.com/signup",
         {
           method: "PUT",
           headers: {

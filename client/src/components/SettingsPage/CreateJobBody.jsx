@@ -25,13 +25,16 @@ const CreateJobBody = ({}) => {
     });
     console.log(formData);
     try {
-      const response = await fetch(`http://localhost:3000/add-jobs`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formObject),
-      });
+      const response = await fetch(
+        `https://innovatex-hackathon.onrender.com/add-jobs`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formObject),
+        }
+      );
 
       console.log("response:", response);
 

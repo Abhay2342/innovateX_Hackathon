@@ -51,7 +51,7 @@ const LoginPage = () => {
 
       const response = await fetch(
         // "https://innovate-x-hackathon.vercel.app/login",
-        "http://localhost:3000/login",
+        "https://innovatex-hackathon.onrender.com/login",
         {
           method: "POST",
           headers: {
