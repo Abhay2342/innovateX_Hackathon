@@ -124,6 +124,25 @@ const JobsPage = () => {
             applyLink="https://example.com/apply"
           />
         </Grid>
+        <Grid item xs={6}>
+          <JobListingCard
+            jobTitle="Backend Engineer"
+            company="XYZ Corporation"
+            location="San Francisco, CA"
+            description="Join our team as a Backend Engineer and work on cutting-edge technologies. We're looking for someone with strong experience in Node.js and databases."
+            applyLink="https://example.com/apply"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <JobListingCard
+            jobTitle="Backend Engineer"
+            company="XYZ Corporation"
+            location="San Francisco, CA"
+            description="Join our team as a Backend Engineer and work on cutting-edge technologies. We're looking for someone with strong experience in Node.js and databases."
+            applyLink="https://example.com/apply"
+          />
+        </Grid>
       </Grid>
     </Grid>
   );
