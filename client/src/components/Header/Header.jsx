@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Grid, Button } from "@mui/material";
+import { AppBar, Toolbar, Grid, Button, Divider } from "@mui/material";
 
 const Header = () => {
   return (
