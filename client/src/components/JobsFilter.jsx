@@ -32,11 +32,11 @@ const FilterSidebar = ({ filters, setFilters, handleFilterSubmit }) => {
 
       if (response.ok) {
         let newData = await response.json();
+
         newData = JSON.stringify(newData);
+        console.log(newData);
         localStorage.setItem("user", newData);
-        // userData = await JSON.parse(userData);
-        // localStorage.setItem("user", userData);
-        setUserData(JSON.parse(newData));
+
         console.log("Details Updated");
       } else {
         // Handle unsuccessful sign-up, show an error message, etc.
