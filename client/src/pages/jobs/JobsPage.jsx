@@ -97,28 +97,89 @@ const JobsPage = () => {
       alignItems="center"
       style={{ height: "80vh" }}
     >
-      {/* Left Side with Image */}
-      <Grid item xs={3}>
-        <img
-          src={img} // replace with the path to your image
-          alt="Login Page Image"
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+      <Grid item xs={3} alignSelf={"flex-start"}>
+        {" "}
+        <FilterSidebar
+          filters={filters}
+          setFilters={setFilters}
+          handleFilterSubmit={handleFilterSubmit}
         />
       </Grid>
       {/* Right Side with Login Form */}
       <Divider
         orientation="vertical"
-        sx={{ marginX: "30px", borderRightWidth: 2 }}
+        sx={{ marginLeft: "30px", borderRightWidth: 2 }}
         variant="middle"
         flexItem
       />
 
       <Grid
         item
-        xs={9}
-        sx={{ justifyContent: "center" }}
-        justifyContent="center"
-      ></Grid>
+        container
+        xs={7}
+        spacing={2}
+        height={"80vh"}
+        alignSelf={"flex-start"}
+        sx={{ overflowY: "auto", paddingX: "30px" }}
+      >
+        <Grid item xs={6}>
+          <JobListingCard
+            jobTitle="Frontend Developer"
+            company="ABC Company"
+            location="New York, NY"
+            description="We are seeking a talented Frontend Developer to join our team. If you have experience with ReactJS and a passion for creating beautiful user interfaces, apply now!"
+            applyLink="https://example.com/apply"
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <JobListingCard
+            jobTitle="Frontend Developer"
+            company="ABC Company"
+            location="New York, NY"
+            description="We are seeking a talented Frontend Developer to join our team. If you have experience with ReactJS and a passion for creating beautiful user interfaces, apply now!"
+            applyLink="https://example.com/apply"
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <JobListingCard
+            jobTitle="Backend Engineer"
+            company="XYZ Corporation"
+            location="San Francisco, CA"
+            description="Join our team as a Backend Engineer and work on cutting-edge technologies. We're looking for someone with strong experience in Node.js and databases."
+            applyLink="https://example.com/apply"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <JobListingCard
+            jobTitle="Backend Engineer"
+            company="XYZ Corporation"
+            location="San Francisco, CA"
+            description="Join our team as a Backend Engineer and work on cutting-edge technologies. We're looking for someone with strong experience in Node.js and databases."
+            applyLink="https://example.com/apply"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <JobListingCard
+            jobTitle="Backend Engineer"
+            company="XYZ Corporation"
+            location="San Francisco, CA"
+            description="Join our team as a Backend Engineer and work on cutting-edge technologies. We're looking for someone with strong experience in Node.js and databases."
+            applyLink="https://example.com/apply"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <JobListingCard
+            jobTitle="Backend Engineer"
+            company="XYZ Corporation"
+            location="San Francisco, CA"
+            description="Join our team as a Backend Engineer and work on cutting-edge technologies. We're looking for someone with strong experience in Node.js and databases."
+            applyLink="https://example.com/apply"
+          />
+        </Grid>
+      </Grid>
     </Grid>
   );
 };

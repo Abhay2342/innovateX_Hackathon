@@ -9,8 +9,8 @@ const JobListingCard = ({
   applyLink,
 }) => {
   return (
-    <Card variant="outlined">
-      <CardContent>
+    <Card variant="elevation">
+      <CardContent sx={{ padding: "30px" }}>
         <Typography variant="h5" component="h2">
           {jobTitle}
         </Typography>
@@ -21,7 +21,8 @@ const JobListingCard = ({
           {description}
         </Typography>
         <Button
-          variant="contained"
+          sx={{ marginTop: 3 }}
+          variant="text"
           color="primary"
           href={applyLink}
           target="_blank"
