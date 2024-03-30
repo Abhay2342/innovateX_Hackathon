@@ -11,20 +11,13 @@ const theme = createTheme({
       styleOverrides: {
         header: {
           padding: "12px 24px",
-          color: "#2c2f32",
-          textTransform: "uppercase",
-          border: "2px solid #0b86ff",
+          color: "white",
+          backgroundColor: "#003396",
+
           display: "block",
-          borderRadius: "10px",
-          backgroundColor: "transparent",
-          fontWeight: 600,
-          fontSize: "16px",
-          lineHeight: "150%",
+          fontWeight: 700,
           transition: "color .3s, background-color .3s",
-          justifyContent: "center",
-          textAlign: "center",
-          paddingLeft: "13px",
-          paddingRight: "13px",
+
           minWidth: "165px",
         },
 

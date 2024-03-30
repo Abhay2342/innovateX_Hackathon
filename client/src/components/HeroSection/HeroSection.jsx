@@ -77,10 +77,11 @@ const HeroSection = ({
                 variant="listingSearch"
                 size="large"
                 sx={{
-                  background: "#CCDDFF",
+                  background: "#003396",
+                  color: "white",
                   margin: "1px 0px",
                   border: 1.5,
-
+                  borderColor: "#003396",
                   borderRadius: "0px",
 
                   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
@@ -97,7 +98,12 @@ const HeroSection = ({
             </Button>
           </Grid>
           <Grid item>
-            <Button variant="header" size="large" onClick={handleSignUpSubmit}>
+            <Button
+              variant="header"
+              size="large"
+              sx={{ backgroundColor: "white", border: 0, color: "black" }}
+              onClick={handleSignUpSubmit}
+            >
               SIGN UP
             </Button>
           </Grid>
