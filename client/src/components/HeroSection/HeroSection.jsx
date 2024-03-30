@@ -51,7 +51,7 @@ const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit,handleSearchSubmit 
             <TextField
                 sx={{
                   background: "#CCDDFF",
-                  margin: "1px 15px",
+                  margin: "1px 0px",
                   border: 1.5,
                   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
                 }}
@@ -72,7 +72,7 @@ const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit,handleSearchSubmit 
         >
         <Button variant="header" size="large" sx={{
                   background: "#CCDDFF",
-                  margin: "1px 15px",
+                  margin: "1px 0px",
                   border: 1.5,
                   borderRadius:1,
                   boxShadow: "px 3px 0px rgba(0, 0, 0, 0.25)",
