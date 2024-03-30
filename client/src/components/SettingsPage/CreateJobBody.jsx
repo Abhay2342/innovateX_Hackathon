@@ -55,7 +55,7 @@ const CreateJobBody = ({}) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleJobCreation}>
       <Grid container rowSpacing={5}>
         <Grid item container spacing={1}>
           <Grid
@@ -217,7 +217,6 @@ const CreateJobBody = ({}) => {
         <Grid item container>
           <Grid item>
             <Button
-              onClick={handleJobCreation}
               variant="contained"
               type="submit"
               sx={{

@@ -27,7 +27,7 @@ app.post("/jobs", (req, res) => {
     jobs(req, res);
 })
 
-app.post("/add/jobs", (req, res) => {
+app.post("/add-jobs", (req, res) => {
     addJobs(req, res);
 });
 
