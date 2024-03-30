@@ -41,7 +41,7 @@ const Header = () => {
             justifyContent="center"
           >
             <Grid item>
-              <Button variant="menu_header" color="inherit">
+              <Button href="/" variant="menu_header" color="inherit">
                 HOME
               </Button>
             </Grid>

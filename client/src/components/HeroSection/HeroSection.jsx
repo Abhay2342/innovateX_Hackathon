@@ -1,9 +1,13 @@
 import React from "react";
-import { Box, Grid, Typography, Button,TextField } from "@mui/material";
+import { Box, Grid, Typography, Button, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./HeroSection.css";
 
-const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit,handleSearchSubmit }) => {
+const HeroSection = ({
+  handleLoginSubmit,
+  handleSignUpSubmit,
+  handleSearchSubmit,
+}) => {
   return (
     <Box
       sx={{
@@ -29,7 +33,7 @@ const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit,handleSearchSubmit 
             <Typography variant="bannerH1" align="center">
               CareerCompass
             </Typography>
-            <Typography variant="tagLine" align="center" marginTop={"-20px"}>
+            <Typography variant="tagLine" align="center">
               “Connecting Talent With Opportunity”
             </Typography>
           </div>
@@ -43,12 +47,11 @@ const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit,handleSearchSubmit 
           spacing={3}
           container
           justifyContent="center"
-          marginY={"-20px"} // Adjusted negative margin
+          // Adjusted negative margin
         >
-          <Grid container
-          justifyContent="center">
-            <Grid item md={7}> 
-            <TextField
+          <Grid container justifyContent="center" alignItems="center">
+            <Grid item md={7}>
+              <TextField
                 sx={{
                   background: "#CCDDFF",
                   margin: "1px 0px",
@@ -63,6 +66,7 @@ const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit,handleSearchSubmit 
                 required
               />
             </Grid>
+<<<<<<< HEAD
           <Grid item
         md = {3}
         spacing={15}
@@ -72,15 +76,33 @@ const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit,handleSearchSubmit 
         >
         <Button variant="header" size="large" sx={{
                   background: "#CCDDFF",
+=======
+            <Grid
+              item
+              md={"auto"}
+              container
+              justifyContent="center"
+              marginY={"5px"}
+            >
+              <Button
+                variant="listingSearch"
+                size="large"
+                sx={{
+                  background: "#003396",
+                  color: "white",
+>>>>>>> 2e5fd30f65a31133b131600bbed9fc7033222d47
                   margin: "1px 0px",
                   border: 1.5,
-                  borderRadius:1,
-                  boxShadow: "px 3px 0px rgba(0, 0, 0, 0.25)",
-                }} onClick={handleSearchSubmit}>
-            Search
-          </Button>
+                  borderColor: "#003396",
+                  borderRadius: "0px",
 
-        </Grid>
+                  boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
+                }}
+                onClick={handleSearchSubmit}
+              >
+                Search
+              </Button>
+            </Grid>
           </Grid>
           <Grid item>
             <Button variant="header" size="large" onClick={handleLoginSubmit}>
@@ -88,7 +110,12 @@ const HeroSection = ({ handleLoginSubmit, handleSignUpSubmit,handleSearchSubmit 
             </Button>
           </Grid>
           <Grid item>
-            <Button variant="header" size="large" onClick={handleSignUpSubmit}>
+            <Button
+              variant="header"
+              size="large"
+              sx={{ backgroundColor: "white", border: 0, color: "black" }}
+              onClick={handleSignUpSubmit}
+            >
               SIGN UP
             </Button>
           </Grid>

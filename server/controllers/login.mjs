@@ -5,7 +5,6 @@ const login = async (req, res) => {
     const { email, password } = req.body;
 
     const collection = db.collection("users");
-    const newsCollection = db.collection("collection");
 
     try {
         const user = await collection.findOne({ email });
@@ -13,8 +12,7 @@ const login = async (req, res) => {
             const passwordMatch = await bcrypt.compare(password, user.password);
 
             if (passwordMatch) {
-                const newsData = await newsCollection.findOne({ email });
-                res.status(200).send([user, newsData]);
+                res.status(200).send({"Done": "Logged IN"});
             } else {
                 res.status(401).send("Invalid Credentials!");
             }

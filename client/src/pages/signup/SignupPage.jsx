@@ -1,7 +1,4 @@
-import React, { useState } from "react";
-import { useContext } from "react";
-import img from "../../assets/preview.png"
-
+import React from "react";
 import {
   Container,
   Grid,
@@ -11,87 +8,73 @@ import {
   Typography,
   Divider,
   Link,
-  CircularProgress, // Import CircularProgress for the loading spinner
+  MenuItem,
+  Select,
+  InputLabel,
 } from "@mui/material";
 import GoogleIcon from "../../assets/google.svg";
 import TwitterIcon from "../../assets/twitter.svg";
 import LinkedInIcon from "../../assets/linkedin.svg";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-// import { useUser } from "../../components/UserContext";
-const LoginPage = () => {
-  const navigate = useNavigate();
-  // const { user, loginUser } = useUser(); // Destructure user and loginUser from useUser
+import { useState } from "react";
+import { CircularProgress } from "@mui/material";
+const SignUpPage = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false); // State to manage loading spinner
-
-  // Handler for login button click
-  const handleSignUpClick = () => {
-    navigate("/signup");
+  const [loading, setLoading] = useState(false);
+  const handleLoginClick = () => {
+    navigate("/login");
   };
 
   const handleLogoClick = () => {
     navigate("/");
   };
 
-  const handleUsernameChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleLoginSubmit = async (event) => {
+  const handleSignUpSubmit = async (event) => {
     event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const formObject = {};
+    formData.forEach((value, key) => {
+      formObject[key] = value;
+    });
 
     try {
       setLoading(true);
-
       const response = await fetch(
-        // "https://innovate-x-hackathon.vercel.app/login",
-        "http://localhost:3000/login",
+        // "https://innovate-x-hackathon.vercel.app/signup",
+        "http://localhost:3000/signup",
         {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            email,
-            password,
-          }),
+          body: JSON.stringify(formObject),
         }
       );
 
-      if (response.ok) {
-        const userData = await response.json();
-        console.log("Logged IN");
-        // Update user context with email and other user data
-        // loginUser(userData);
-        // console.log(userData[0]);
-        // console.log(JSON.stringify(userData));
-        // localStorage.setItem("user", JSON.stringify(userData[0]));
-        // localStorage.setItem(
-        //   "userCollection",
-        //   JSON.stringify(userData[1].collection)
-        // );
-        // localStorage.setItem("isLoggedIn", "true");
+      console.log("Sign Up response:", response);
 
-        // setLoading(false);
-        // navigate("/profile-settings");
+      if (response.ok) {
+        // Handle successful sign-up, e.g., redirect to a confirmation page
+        console.log("User Created");
+        setLoading(false);
+        navigate("/login");
       } else {
-        console.error("Login failed");
+        // Handle unsuccessful sign-up, show an error message, etc.
+        console.error("Sign Up failed");
+        let data = await response.text();
+        console.log(data);
         setLoading(false);
       }
     } catch (error) {
-      console.error("Error during login:", error);
+      console.error("Error during Sign Up:", error);
       setLoading(false);
     }
   };
 
   return (
-    <Container maxWidth="lg" style={{ height: "80vh" }}>
+    <Container maxWidth="lg">
       <Grid
         container
         justifyContent="center"
@@ -100,12 +83,11 @@ const LoginPage = () => {
       >
         {/* Left Side with Image */}
         <Grid item xs={5}>
-          <img
+          {/* <img
             src={img} // replace with the path to your image
             alt="Login Page Image"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-      
+          /> */}
         </Grid>
         {/* Right Side with Login Form */}
         <Divider
@@ -132,19 +114,71 @@ const LoginPage = () => {
           >
             <Button variant="text" onClick={handleLogoClick}>
               <Typography variant="h3" sx={{ marginBottom: "30px" }}>
-                Career Compass
+                Career Campus
               </Typography>
             </Button>
-            <form>
+            <form onSubmit={handleSignUpSubmit}>
               <TextField
-                onChange={handleUsernameChange}
                 sx={{
                   background: "#FFFFFF",
                   margin: "5px 0px",
                   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
                   border: 1,
                 }}
-                label="Username / Email"
+                label="Name"
+                name="name"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                type="text"
+                required
+              />
+
+              <Select
+                fullWidth
+                sx={{
+                  background: "#FFFFFF",
+                  margin: "5px 0px",
+                  boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
+                  border: 1,
+                }}
+                labelId="role"
+                id="role"
+                value={"Choose Your Account Type"}
+                label="role"
+                name="role"
+              >
+                <MenuItem value={"Choose Your Account Type"}>
+                  Choose Your Account Type
+                </MenuItem>
+                <MenuItem value={"Job Seeker"}>Job Seeker</MenuItem>
+                <MenuItem value={"Employer"}>Employer</MenuItem>
+              </Select>
+
+              <TextField
+                sx={{
+                  background: "#FFFFFF",
+                  margin: "5px 0px",
+                  boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
+                  border: 1,
+                }}
+                name="email"
+                label="EMAIL"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                type="email"
+                required
+              />
+              <TextField
+                sx={{
+                  background: "#FFFFFF",
+                  margin: "5px 0px",
+                  boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
+                  border: 1,
+                }}
+                name="username"
+                label="USERNAME"
                 variant="outlined"
                 fullWidth
                 margin="normal"
@@ -152,13 +186,13 @@ const LoginPage = () => {
                 required
               />
               <TextField
-                onChange={handlePasswordChange}
                 sx={{
                   background: "#FFFFFF",
                   margin: "5px 0px",
                   border: 1,
                   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
                 }}
+                name="password"
                 label="Password"
                 variant="outlined"
                 fullWidth
@@ -168,25 +202,25 @@ const LoginPage = () => {
               />
               <Grid
                 container
-                justifyContent="space-between"
+                justifyContent="flex-start"
                 alignItems="center"
                 sx={{ paddingTop: "20px" }}
               >
                 <Grid item>
                   <Typography variant="filter">
-                    <Link href="#" color="inherit">
-                      Forgot Your Password?
-                    </Link>
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant="filter">
                     <Button
                       variant="text"
                       sx={{ fontWeight: 700, fontFamily: "Inika" }}
-                      onClick={handleSignUpClick}
+                      onClick={handleLoginClick}
                     >
-                      <Link color="inherit">New User?</Link>
+                      <Link
+                        href="/login"
+                        color="inherit"
+                        sx={{ color: "inherit", textDecoration: "underline" }}
+                      >
+                        Already a Member?{" "}
+                        <span style={{ fontWeight: "bold" }}>LOG IN</span>
+                      </Link>
                     </Button>
                   </Typography>
                 </Grid>
@@ -201,7 +235,6 @@ const LoginPage = () => {
                   <Button
                     variant="contained"
                     color="primary"
-                    onClick={handleLoginSubmit}
                     fullWidth
                     type="submit"
                     sx={{
@@ -215,7 +248,7 @@ const LoginPage = () => {
                     {loading ? (
                       <CircularProgress size={24} color="inherit" />
                     ) : (
-                      "Login"
+                      "SignUP"
                     )}
                   </Button>
                 </Grid>
@@ -273,4 +306,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignUpPage;
