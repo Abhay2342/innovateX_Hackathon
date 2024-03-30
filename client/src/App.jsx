@@ -16,11 +16,19 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/jobs" element={<JobsPage />} />
-        <Route path="/employer-dashboard" element={<EmployerDashboard />} />
+        <Route
+          path="/profile-settings"
+          element={<SettingsPage path={"PROFILE"} />}
+        />
+        <Route
+          path="/create-job"
+          element={<SettingsPage path={"CREATE JOB"} />}
+        />
       </Routes>
     </Router>
   );
 }
-import EmployerDashboard from "./pages/dashboard/EmployerDashboard";
+import EmployerDashboard from "./pages/settings/SettingsPage";
+import SettingsPage from "./pages/settings/SettingsPage";
 
 export default App;

@@ -78,8 +78,8 @@ const LoginPage = () => {
         // );
         // localStorage.setItem("isLoggedIn", "true");
 
-        // setLoading(false);
-        // navigate("/profile-settings");
+        setLoading(false);
+        navigate("/profile-settings");
       } else {
         console.error("Login failed");
         setLoading(false);

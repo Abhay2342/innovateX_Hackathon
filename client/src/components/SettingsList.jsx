@@ -1,11 +1,13 @@
+// CategoryList.js
 import React from "react";
-import { Grid, Typography } from "@mui/material";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import Badge from "@mui/material/Badge";
+import { Typography } from "@mui/material";
+
 const SettingsList = ({ selectedItem, handleCategoryClick }) => {
-  const categories = ["PROFILE", "ACCOUNT", "ANALYTICS", "SUPPORT"];
+  const categories = ["PROFILE", "CREATE JOB"];
 
   return (
     <div>
@@ -22,7 +24,6 @@ const SettingsList = ({ selectedItem, handleCategoryClick }) => {
             <ListItemButton
               sx={{
                 lineHeight: "0px",
-                fontFamily: "Inika",
                 fontWeight: 700,
                 fontSize: "1rem",
                 color: selectedItem === category ? "#F24E1E" : "#3F3A3B",
