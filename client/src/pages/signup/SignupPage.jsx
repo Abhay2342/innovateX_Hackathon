@@ -18,6 +18,7 @@ import LinkedInIcon from "../../assets/linkedin.svg";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { useState } from "react";
 import { CircularProgress } from "@mui/material";
+import img from "../../assets/signupimg.png";
 const SignUpPage = () => {
   const navigate = useNavigate(); // Initialize useNavigate
 
@@ -83,11 +84,11 @@ const SignUpPage = () => {
       >
         {/* Left Side with Image */}
         <Grid item xs={5}>
-          {/* <img
+          <img
             src={img} // replace with the path to your image
             alt="Login Page Image"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          /> */}
+          />
         </Grid>
         {/* Right Side with Login Form */}
         <Divider
