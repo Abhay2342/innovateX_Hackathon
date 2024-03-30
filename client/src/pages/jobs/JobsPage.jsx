@@ -94,7 +94,7 @@ const JobsPage = () => {
       alignItems="center"
       style={{ height: "80vh" }}
     >
-      <Grid item xs={3} alignSelf={"flex-start"}>
+      <Grid item xs={3} alignSelf={"flex-start"} sx={{ marginX: "30px" }}>
         {" "}
         <FilterSidebar
           filters={filters}
@@ -104,7 +104,7 @@ const JobsPage = () => {
       </Grid>
       <Divider
         orientation="vertical"
-        sx={{ marginLeft: "30px", borderRightWidth: 2 }}
+        sx={{ borderRightWidth: 2 }}
         variant="middle"
         flexItem
       />

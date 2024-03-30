@@ -44,7 +44,12 @@ const FilterSidebar = ({ filters, setFilters, handleFilterSubmit }) => {
         fullWidth
         margin="normal"
       />
-      <Button variant="contained" color="primary" onClick={handleFilterSubmit}>
+      <Button
+        variant="header"
+        sx={{ marginTop: "10px" }}
+        color="primary"
+        onClick={handleFilterSubmit}
+      >
         Apply Filters
       </Button>
     </div>
