@@ -17,6 +17,7 @@ const HeroSection = ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        height: "60vh",
       }}
     >
       <Grid container spacing={0} paddingX={"20px"}>
@@ -41,6 +42,7 @@ const HeroSection = ({
 
         <Grid
           item
+          paddingTop={5}
           xs={12}
           sm={12}
           md={12}
@@ -59,7 +61,13 @@ const HeroSection = ({
                   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
                 }}
                 label="Search Jobs"
-                InputLabelProps={{  style: { fontSize: '30px', position: 'absolute', top: '-8px' } }}
+                InputLabelProps={{
+                  style: {
+                    fontSize: "30px",
+                    position: "absolute",
+                    top: "-8px",
+                  },
+                }}
                 variant="outlined"
                 fullWidth
                 margin="normal"
@@ -84,11 +92,12 @@ const HeroSection = ({
                   border: 1.5,
                   borderColor: "#003396",
                   borderRadius: "0px",
-                  "&:hover": { // Define hover effect
-                  backgroundColor: "white",
-                  color: "#003396",
-                  transition: "background-color 0.3s ease, color 0.3s ease",
-                },
+                  "&:hover": {
+                    // Define hover effect
+                    backgroundColor: "white",
+                    color: "#003396",
+                    transition: "background-color 0.3s ease, color 0.3s ease",
+                  },
 
                   boxShadow: "3px 3px 0px rgba(0, 0, 0, 0.25)",
                 }}
@@ -99,13 +108,19 @@ const HeroSection = ({
             </Grid>
           </Grid>
           <Grid item>
-            <Button variant="header" size="large" sx={{
-              "&:hover": { // Define hover effect
+            <Button
+              variant="header"
+              size="large"
+              sx={{
+                "&:hover": {
+                  // Define hover effect
                   backgroundColor: "white",
                   color: "#003396",
                   transition: "background-color 0.3s ease, color 0.3s ease",
                 },
-            }} onClick={handleLoginSubmit}>
+              }}
+              onClick={handleLoginSubmit}
+            >
               Login
             </Button>
           </Grid>
@@ -114,8 +129,11 @@ const HeroSection = ({
               variant="header"
               size="large"
               sx={{
-                backgroundColor: "white", border: 0, color: "#003396",
-                "&:hover": { // Define hover effect
+                backgroundColor: "white",
+                border: 0,
+                color: "#003396",
+                "&:hover": {
+                  // Define hover effect
                   backgroundColor: "#003396",
                   color: "white",
                   transition: "background-color 0.3s ease, color 0.3s ease",

@@ -39,11 +39,12 @@ const theme = createTheme({
           paddingBottom: "26px",
           display: "block",
           cursor: "pointer",
-          "&:hover": { // Define hover effect
-                  backgroundColor: "none",
-                  color: "white",
-                  transition: "background-color 0.3s ease, color 0.3s ease",
-                },
+          "&:hover": {
+            // Define hover effect
+            backgroundColor: "none",
+            color: "white",
+            transition: "background-color 0.3s ease, color 0.3s ease",
+          },
         },
 
         contained: {
@@ -109,7 +110,6 @@ const theme = createTheme({
     bannerH1: {
       fontFamily: "Prompt",
       "@media (max-width: 480px)": {
-        marginBottom: "20px",
         maxWidth: "800px",
         fontWeight: 700,
         fontSize: "32px",
@@ -117,7 +117,6 @@ const theme = createTheme({
         textAlign: "start",
       },
       "@media (min-width: 481px) and (max-width: 900px)": {
-        marginBottom: "20px",
         maxWidth: "800px",
         fontWeight: 700,
         fontSize: "32px",
@@ -125,7 +124,6 @@ const theme = createTheme({
         textAlign: "start",
       },
       "@media (min-width: 901px) and (max-width: 1920px)": {
-        marginBottom: "20px",
         maxWidth: "800px",
         fontWeight: 700,
         fontSize: "60px",
