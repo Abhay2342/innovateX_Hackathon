@@ -18,7 +18,7 @@ const FilterSidebar = ({ filters, setFilters, handleFilterSubmit }) => {
     console.log(formData);
     try {
       const response = await fetch(
-        `https://innovatex-hackathon.onrender.com/add-jobs`,
+        `https://innovatex-hackathon.onrender.com/jobs`,
         {
           method: "POST",
           headers: {
