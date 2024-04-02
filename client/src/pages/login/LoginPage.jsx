@@ -11,7 +11,8 @@ import {
   Typography,
   Divider,
   Link,
-  CircularProgress, // Import CircularProgress for the loading spinner
+  CircularProgress,
+  colors, // Import CircularProgress for the loading spinner
 } from "@mui/material";
 import GoogleIcon from "../../assets/google.svg";
 import TwitterIcon from "../../assets/twitter.svg";
@@ -125,12 +126,15 @@ const LoginPage = () => {
             style={{
               padding: "20px",
               textAlign: "flex-start",
-              border: "0px",
+              // border: "5px black solid",
+              borderRadius:"15px",
+              backgroundColor:"#6A9DFF",
+
               boxShadow: "0px 0px 0px 0px",
             }}
           >
             <Button variant="text" onClick={handleLogoClick}>
-              <Typography variant="h3" sx={{ marginBottom: "30px" }}>
+              <Typography variant="h3" sx={{ marginBottom: "30px",fontFamily: "Montserrat", color: "white",fontWeight:"800"}}>
                 Career Compass
               </Typography>
             </Button>
@@ -172,7 +176,7 @@ const LoginPage = () => {
                 sx={{ paddingTop: "20px" }}
               >
                 <Grid item>
-                  <Typography variant="filter">
+                  <Typography variant="filter" sx={{fontFamily:"Poppins", color:"white"}}>
                     <Link href="#" color="inherit">
                       Forgot Your Password?
                     </Link>
@@ -182,7 +186,7 @@ const LoginPage = () => {
                   <Typography variant="filter">
                     <Button
                       variant="text"
-                      sx={{ fontWeight: 700, fontFamily: "Inika" }}
+                      sx={{ fontWeight: 700, fontFamily: "Poppins", color:"white" }}
                       onClick={handleSignUpClick}
                     >
                       <Link color="inherit">New User?</Link>
@@ -205,8 +209,14 @@ const LoginPage = () => {
                     type="submit"
                     sx={{
                       backgroundColor: "#F24E1E",
-                      fontFamily: "Inika",
-                      borderRadius: "0px",
+                      fontFamily: "Montserrat",
+                      fontWeight:"700",
+                      color:"white",
+                      '&:hover':{
+                        backgroundColor: "#FCB790",
+                        color: "black",
+                      },
+                      borderRadius: "5px",
                       lineHeight: "2rem",
                       border: "12px",
                     }}
